@@ -76,4 +76,512 @@
             position: relative;
         }
 
+        .search-input {
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            width: 300px;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .filter-select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--hover-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .tree-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
         
+        .tree-category {
+            margin-bottom: 1rem;
+        }
+
+        .tree-category-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .tree-category-header:hover {
+            background-color: var(--hover-bg);
+        }
+
+        .tree-caret {
+            margin-right: 0.75rem;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .tree-caret.open {
+            transform: rotate(90deg);
+        }
+
+        .tree-category-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .tree-items {
+            padding-left: 2.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .tree-items.open {
+            max-height: 1000px; /* Adjust as needed */
+        }
+
+        .server-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .server-footer {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .details-button {
+            background-color: var(--accent);
+            color: var(--bg-secondary);
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .details-button:hover {
+            background-color: var(--text-primary);
+        }
+
+        .server-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .server-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        .server-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .official {
+            background: rgba(34, 197, 94, 0.1);
+            color: #059669;
+            border-color: rgba(34, 197, 94, 0.3);
+        }
+
+        .community {
+            background: rgba(59, 130, 246, 0.1);
+            color: #2563eb;
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .server-description {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .server-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">MCP Servers</div>
+            <div class="controls">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search servers..." id="searchInput">
+                </div>
+                <select class="filter-select" id="filterSelect">
+                    <option value="all">All Types</option>
+                    <option value="official">Official</option>
+                    <option value="community">Community</option>
+                </select>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <span class="stat-number" id="totalServers">0</span>
+                <span class="stat-label">Total Servers</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="officialServers">0</span>
+                <span class="stat-label">Official</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="communityServers">0</span>
+                <span class="stat-label">Community</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="categoriesCount">0</span>
+                <span class="stat-label">Categories</span>
+            </div>
+        </div>
+
+        <div class="tree-container" id="treeContainer">
+            <div class="loading">Loading MCP Servers...</div>
+        </div>
+    </div>
+
+    <script>
+        const mcpServers = [
+            // AI
+            { name: "Anthropic Claude", type: "official", description: "Integration with Claude's advanced AI capabilities", tags: ["ai", "claude"], category: "AI", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "OpenAI", type: "official", description: "Access to OpenAI's language models and APIs", tags: ["openai", "gpt"], category: "AI", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Chroma", type: "official", description: "Vector search, document storage, and full-text search", tags: ["vector", "search"], category: "AI", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "HuggingFace", type: "community", description: "Access HuggingFace Spaces for AI models and datasets", tags: ["huggingface", "ml"], category: "AI", link: "https://github.com/huggingface/huggingface-mcp" },
+            { name: "Replicate", type: "community", description: "Search, run and manage machine learning models", tags: ["replicate", "ml"], category: "AI", link: "https://github.com/replicate/replicate-mcp" },
+            { name: "ElevenLabs", type: "community", description: "Text-to-speech API integration", tags: ["tts", "voice"], category: "AI", link: "https://github.com/elevenlabs/elevenlabs-mcp" },
+            { name: "Memory", type: "official", description: "Knowledge graph-based persistent memory system", tags: ["memory", "knowledge-graph"], category: "AI", link: "https://github.com/modelcontextprotocol/servers" },
+
+            // Cloud
+            { name: "AWS", type: "official", description: "Specialized MCP servers that bring AWS best practices to development workflow", tags: ["aws", "cloud"], category: "Cloud", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Microsoft Azure", type: "official", description: "Azure services integration for cloud operations", tags: ["azure", "microsoft"], category: "Cloud", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Cloudflare", type: "official", description: "Deploy, configure & interrogate Cloudflare resources", tags: ["cloudflare", "cdn"], category: "Cloud", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Kubernetes", type: "community", description: "Connect to Kubernetes cluster and manage pods, deployments, services", tags: ["kubernetes", "k8s"], category: "Cloud", link: "https://github.com/kubernetes/kubernetes-mcp" },
+            { name: "Firebase", type: "community", description: "Interact with Firebase services including Auth, Firestore, Storage", tags: ["firebase", "backend"], category: "Cloud", link: "https://github.com/firebase/firebase-mcp" },
+            { name: "Supabase", type: "community", description: "Connect to Supabase platform for database, auth, edge functions", tags: ["supabase", "backend"], category: "Cloud", link: "https://github.com/supabase/supabase-mcp" },
+
+            // Communication
+            { name: "Slack", type: "official", description: "Channel management and messaging capabilities", tags: ["slack", "messaging"], category: "Communication", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Discord", type: "community", description: "Discord integration for guilds and messaging", tags: ["discord", "chat"], category: "Communication", link: "https://github.com/discord/discord-mcp" },
+            { name: "Telegram", type: "community", description: "Telegram API bridge for messaging and user data", tags: ["telegram", "messaging"], category: "Communication", link: "https://github.com/telegram/telegram-mcp" },
+            { name: "Gmail", type: "community", description: "Gmail integration with auto authentication support", tags: ["gmail", "email"], category: "Communication", link: "https://github.com/google/gmail-mcp" },
+            { name: "WhatsApp", type: "community", description: "WhatsApp integration for messaging automation", tags: ["whatsapp", "messaging"], category: "Communication", link: "https://github.com/lharries/whatsapp-mcp" },
+
+            // Database
+            { name: "PostgreSQL", type: "official", description: "Read-only database access with schema inspection", tags: ["database", "postgresql"], category: "Database", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "SQLite", type: "official", description: "Database interaction and business intelligence capabilities", tags: ["database", "sqlite"], category: "Database", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "ClickHouse", type: "official", description: "Query your ClickHouse database server", tags: ["clickhouse", "analytics"], category: "Database", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "SingleStore", type: "official", description: "Interact with the SingleStore database platform", tags: ["singlestore", "database"], category: "Database", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "MongoDB", type: "community", description: "Full featured MCP server for MongoDB databases", tags: ["mongodb", "database"], category: "Database", link: "https://github.com/mongodb/mongodb-mcp" },
+            { name: "Redis", type: "community", description: "Redis database operations and caching capabilities", tags: ["redis", "cache"], category: "Database", link: "https://github.com/redis/redis-mcp" },
+            { name: "Airtable", type: "community", description: "Read and write access to Airtable databases", tags: ["airtable", "database"], category: "Database", link: "https://github.com/jason-a-joyce/airtable-mcp-server" },
+            { name: "InfluxDB", type: "community", description: "Run queries against InfluxDB time-series database", tags: ["influxdb", "timeseries"], category: "Database", link: "https://github.com/influxdata/influxdb-mcp" },
+            { name: "Neo4j", type: "community", description: "Neo4j graph database server with Cypher support", tags: ["neo4j", "graph"], category: "Database", link: "https://github.com/neo4j/neo4j-mcp" },
+
+            // Development
+            { name: "Git", type: "official", description: "Tools to read, search, and manipulate Git repositories", tags: ["git", "version-control"], category: "Development", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "GitHub", type: "official", description: "Repository management, file operations, and GitHub API integration", tags: ["github", "api"], category: "Development", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Sentry", type: "official", description: "Official MCP server for error tracking and monitoring", tags: ["monitoring", "errors"], category: "Development", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "CircleCI", type: "official", description: "Enable AI Agents to fix build failures from CircleCI", tags: ["ci-cd", "testing"], category: "Development", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "E2B", type: "official", description: "Run code in secure sandboxes hosted by E2B", tags: ["sandbox", "code"], category: "Development", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Docker", type: "community", description: "Run and manage docker containers, docker compose, and logs", tags: ["docker", "containers"], category: "Development", link: "https://github.com/docker/docker-mcp" },
+            { name: "VSCode", type: "community", description: "Integration with Visual Studio Code for development", tags: ["vscode", "ide"], category: "Development", link: "https://github.com/microsoft/vscode-mcp" },
+            { name: "JetBrains", type: "community", description: "Work on your code with JetBrains IDEs", tags: ["jetbrains", "ide"], category: "Development", link: "https://github.com/jetbrains/jetbrains-mcp" },
+            { name: "Unity3d", type: "community", description: "Control and interact with Unity3d Game Engine", tags: ["unity", "gamedev"], category: "Development", link: "https://github.com/Unity-Technologies/unity-mcp" },
+            { name: "Godot", type: "community", description: "MCP server for interacting with the Godot game engine", tags: ["godot", "gamedev"], category: "Development", link: "https://github.com/godotengine/godot-mcp" },
+            { name: "QGIS", type: "community", description: "Connects QGIS Desktop to Claude AI for GIS operations", tags: ["gis", "mapping"], category: "Development", link: "https://github.com/qgis/qgis-mcp" },
+
+            // Productivity
+            { name: "Notion", type: "official", description: "Workspace management and document collaboration", tags: ["notion", "docs"], category: "Productivity", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Apple Notes", type: "community", description: "Talk with your Apple Notes", tags: ["apple", "notes"], category: "Productivity", link: "https://github.com/fuyutarow/apple-notes-mcp-server" },
+            { name: "Obsidian", type: "community", description: "Read and search through your Obsidian vault", tags: ["obsidian", "notes"], category: "Productivity", link: "https://github.com/obsidianmd/obsidian-mcp" },
+            { name: "Todoist", type: "community", description: "Full implementation of Todoist Rest API", tags: ["todoist", "tasks"], category: "Productivity", link: "https://github.com/doist/todoist-mcp" },
+            { name: "Linear", type: "community", description: "Integrates with Linear project management systems", tags: ["linear", "project-management"], category: "Productivity", link: "https://github.com/linearapp/linear-mcp" },
+            { name: "Jira", type: "community", description: "MCP server to provide Jira Tickets information to AI agents", tags: ["jira", "tickets"], category: "Productivity", link: "https://github.com/atlassian/jira-mcp" },
+            { name: "Trello", type: "community", description: "Trello integration for working with boards, lists and cards", tags: ["trello", "kanban"], category: "Productivity", link: "https://github.com/trello/trello-mcp" },
+            { name: "ClickUp", type: "community", description: "ClickUp task management with bulk operations support", tags: ["clickup", "tasks"], category: "Productivity", link: "https://github.com/clickup/clickup-mcp" },
+            
+            // Other categories from original file
+            { name: "Brave Search", type: "official", description: "Web and local search using Brave's Search API", tags: ["search", "web"], category: "Search", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Fetch", type: "official", description: "Web content fetching and conversion for efficient LLM usage", tags: ["web", "scraping"], category: "Web", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Filesystem", type: "official", description: "Secure file operations with configurable access controls", tags: ["files", "security"], category: "Storage", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Google Drive", type: "official", description: "File access and search capabilities for Google Drive", tags: ["google", "storage"], category: "Storage", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Google Maps", type: "official", description: "Location services, directions, and place details", tags: ["maps", "location"], category: "Location", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Puppeteer", type: "official", description: "Browser automation and web scraping", tags: ["browser", "automation"], category: "Web", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Stripe", type: "official", description: "Payment processing and financial transactions", tags: ["payments", "stripe"], category: "Finance", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Zapier", type: "official", description: "Connect AI Agents to 8,000+ apps instantly", tags: ["automation", "integrations"], category: "Automation", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "PayPal", type: "official", description: "PayPal's official MCP server for payment integration", tags: ["payments", "paypal"], category: "Finance", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Firecrawl", type: "official", description: "Extract web data with Firecrawl", tags: ["scraping", "web"], category: "Web", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Grafana", type: "official", description: "Search dashboards, investigate incidents and query datasources", tags: ["monitoring", "dashboards"], category: "Analytics", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "Tavily", type: "official", description: "Search engine for AI agents powered by Tavily", tags: ["search", "ai"], category: "Search", link: "https://github.com/modelcontextprotocol/servers" },
+            { name: "YouTube", type: "community", description: "Fetch YouTube subtitles and video information", tags: ["youtube", "video"], category: "Media", link: "https://github.com/google/youtube-mcp" },
+            { name: "Home Assistant", type: "community", description: "Control smart home devices and automation", tags: ["iot", "smart-home"], category: "IoT", link: "https://github.com/home-assistant/home-assistant-mcp" },
+            { name: "Excel", type: "community", description: "Excel manipulation including data reading/writing, formatting, charts", tags: ["excel", "spreadsheets"], category: "Office", link: "https://github.com/haris-musa/excel-mcp-server" },
+            { name: "Figma", type: "community", description: "Direct access to Figma file data for design implementation", tags: ["figma", "design"], category: "Design", link: "https://github.com/figma/figma-mcp" },
+            { name: "BigQuery", type: "community", description: "Google BigQuery integration for data analysis", tags: ["bigquery", "analytics"], category: "Analytics", link: "https://github.com/LucasHild/bigquery" },
+            { name: "Elasticsearch", type: "community", description: "Query and analyze Elasticsearch databases", tags: ["elasticsearch", "search"], category: "Search", link: "https://github.com/elastic/elasticsearch-mcp" },
+            { name: "Perplexity", type: "community", description: "Interacting with Perplexity search and AI", tags: ["perplexity", "search"], category: "Search", link: "https://github.com/perplexity-ai/perplexity-mcp" },
+            { name: "Solana Agent Kit", type: "community", description: "Interact with Solana blockchain with 40+ protocol actions", tags: ["solana", "blockchain"], category: "Blockchain", link: "https://github.com/solana-labs/solana-mcp" },
+            { name: "Ethereum", type: "community", description: "Comprehensive blockchain services for EVM networks", tags: ["ethereum", "web3"], category: "Blockchain", link: "https://github.com/ethereum/ethereum-mcp" },
+            { name: "Algorand", type: "community", description: "Comprehensive MCP server for Algorand blockchain interactions", tags: ["algorand", "blockchain"], category: "Blockchain", link: "https://github.com/algorand-devrel/algorand-mcp-server" },
+            { name: "Blender", type: "community", description: "Blender integration for 3D scene creation and modeling", tags: ["blender", "3d"], category: "Design", link: "https://github.com/ahujasid/blender-mcp" },
+            { name: "Maya", type: "community", description: "MCP server for Autodesk Maya 3D software", tags: ["maya", "3d"], category: "Design", link: "https://github.com/autodesk/maya-mcp" },
+            { name: "Shopify", type: "community", description: "Interact with Shopify API including orders, products, customers", tags: ["shopify", "ecommerce"], category: "E-commerce", link: "https://github.com/shopify/shopify-mcp" },
+            { name: "Spotify", type: "community", description: "Control and interact with Spotify music platform", tags: ["spotify", "music"], category: "Media", link: "https://github.com/spotify/spotify-mcp" },
+            { name: "X (Twitter)", type: "community", description: "Create, manage and publish X/Twitter posts", tags: ["twitter", "social"], category: "Social", link: "https://github.com/twitter/x-mcp" },
+            { name: "TikTok", type: "community", description: "TikTok integration for post details and video subtitles", tags: ["tiktok", "video"], category: "Social", link: "https://github.com/tiktok/tiktok-mcp" },
+            { name: "Xero", type: "community", description: "Interact with Xero accounting data for business operations", tags: ["accounting", "finance"], category: "Finance", link: "https://github.com/xero/xero-mcp" },
+            { name: "HubSpot", type: "community", description: "HubSpot CRM integration for managing contacts and companies", tags: ["crm", "sales"], category: "CRM", link: "https://github.com/hubspot/hubspot-mcp" },
+            { name: "Salesforce", type: "community", description: "Interact with Salesforce Data and Metadata", tags: ["salesforce", "crm"], category: "CRM", link: "https://github.com/salesforce/salesforce-mcp" }
+        ];
+
+        const categories = [
+            "Development", "AI", "Database", "Cloud", "Productivity", "Communication", 
+            "Search", "Web", "Storage", "Location", "Finance", "Automation", "Analytics", 
+            "Media", "IoT", "Office", "Design", "Blockchain", "E-commerce", "Social", "CRM"
+        ];
+
+        function initDashboard() {
+            updateStats();
+            renderTree(mcpServers);
+            setupEventListeners();
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        }
+
+        function updateStats() {
+            const total = mcpServers.length;
+            const official = mcpServers.filter(s => s.type === 'official').length;
+            const community = mcpServers.filter(s => s.type === 'community').length;
+            document.getElementById('totalServers').textContent = total;
+            document.getElementById('officialServers').textContent = official;
+            document.getElementById('communityServers').textContent = community;
+            document.getElementById('categoriesCount').textContent = categories.length;
+        }
+
+        function renderTree(servers) {
+            const container = document.getElementById('treeContainer');
+            if (servers.length === 0) {
+                container.innerHTML = '<div class="loading">No servers found.</div>';
+                return;
+            }
+
+            const grouped = servers.reduce((acc, server) => {
+                const category = server.category || "Uncategorized";
+                if (!acc[category]) {
+                    acc[category] = [];
+                }
+                acc[category].push(server);
+                return acc;
+            }, {});
+
+            container.innerHTML = categories.map(category => {
+                if (!grouped[category] || grouped[category].length === 0) return '';
+                
+                return `
+                <div class="tree-category">
+                    <div class="tree-category-header" data-category="${category}">
+                        <span class="tree-caret">▶</span>
+                        <span class="tree-category-name">${category} (${grouped[category].length})</span>
+                    </div>
+                    <div class="tree-items">
+                        ${grouped[category].map(server => `
+                            <div class="server-card">
+                                <div>
+                                    <div class="server-header">
+                                        <div class="server-name">${server.name}</div>
+                                        <span class="server-type ${server.type}">${server.type}</span>
+                                    </div>
+                                    <div class="server-description">${server.description}</div>
+                                    <div class="server-tags">
+                                        ${server.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                    </div>
+                                </div>
+                                <div class="server-footer">
+                                    <a href="${server.link}" target="_blank" class="details-button">Details</a>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                `;
+            }).join('');
+            
+            addTreeEventListeners();
+        }
+        
+        function addTreeEventListeners() {
+            document.querySelectorAll('.tree-category-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const items = header.nextElementSibling;
+                    const caret = header.querySelector('.tree-caret');
+                    items.classList.toggle('open');
+                    caret.classList.toggle('open');
+                });
+            });
+        }
+
+        function setupEventListeners() {
+            document.getElementById('searchInput').addEventListener('input', handleFilter);
+            document.getElementById('filterSelect').addEventListener('change', handleFilter);
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        }
+
+        function handleFilter() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const type = document.getElementById('filterSelect').value;
+
+            let filteredServers = mcpServers;
+
+            if (type !== 'all') {
+                filteredServers = filteredServers.filter(server => server.type === type);
+            }
+
+            if (query) {
+                filteredServers = filteredServers.filter(server =>
+                    server.name.toLowerCase().includes(query) ||
+                    server.description.toLowerCase().includes(query) ||
+                    server.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                    server.category.toLowerCase().includes(query)
+                );
+            }
+
+            renderTree(filteredServers);
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        }
+
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.getElementById('themeToggle').textContent = theme === 'light' ? '🌙' : '☀️';
+            localStorage.setItem('theme', theme);
+        }
+
+        document.addEventListener('DOMContentLoaded', initDashboard);
+    </script>
+</body>
+</html>
